@@ -68,7 +68,7 @@ class Fit:
 
         chisq = self.__chisq(fun, list(popt), bounds)
         dof =  len(self.x_data[bounds[0]:bounds[1]])- len(popt)
-      
+
 
         if(output):
             self.__output(fun,popt,pcov, chisq, dof)
@@ -164,3 +164,48 @@ class FuncPlot:
                     ),
             )
             return go.Figure(data=[trace], layout=layout)
+
+class Hist:
+    def __init__(self, x, binsize = 1):
+        self.x = x
+        self.binsize = binsize
+        self.data = []
+
+    def getPlotData(self, title = "", x_axis = "", y_axis = "", fit = True):
+        std = np.std(self.x)
+        mu = np.mean(self.x)
+        hist = go.Histogram(
+        name = 'Data',
+        x = self.x ,
+        autobinx = False,
+        xbins = dict(start = np.amin(self.x), end = np.amax(self.x), size = self.binsize),
+        )
+        if fit == True:
+            gauss = go.Scatter(
+            name = 'Gaussian Fit',
+            x = np.sort(self.x),
+            y = self.binsize*len(self.x)*1/np.sqrt(2*np.pi*std**2)*
+             np.exp((-(np.sort(self.x)-mu)**2) /(2*std**2))
+            )
+            self.data.append(hist); self.data.append(gauss)
+        else: self.data.append(hist)
+        layout = go.Layout(
+            title = title,
+            xaxis=dict(
+                title = x_axis,
+                titlefont=dict(
+                    family='Courier New, monospace',
+                    size=18,
+                    color='#7f7f7f'
+                    )
+                ),
+            yaxis=dict(
+                title = y_axis,
+                titlefont=dict(
+                    family='Courier New, monospace',
+                    size=18,
+                    color='#7f7f7f'
+                    )
+                ),
+        )
+        return go.Figure(data = self.data, layout = layout)
