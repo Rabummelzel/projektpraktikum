@@ -3,7 +3,6 @@
 \usepackage{amsmath}
 \usepackage[english]{babel}
 \usepackage{fontspec}
-\usepackage{svg}
 \usepackage{hyperref}
 \setmainfont{Liberation Serif}
 \geometry{a4paper,left=30mm,right=30mm, top=2cm, bottom=2cm}
@@ -26,7 +25,7 @@
       The circuit for the temperature sensor looks as follows:
       \begin{figure}[h]
         \includegraphics[width = \textwidth]{circ.png}
-        \caption{temp. sensor shifter circuit}
+        \caption{Temp. sensor shifter circuit}
         \label{fig1}
       \end{figure}
       \\The input range from the temperature sensor we are interested in is
@@ -36,15 +35,70 @@
       setting the amplification factor with $R_1$ and $R_2$. The output range
       should equal the input range of the Arduino analogue input which goes form
       0-3.3V. The values found for the resistances are as follows (in $k\Omega$):
-      \\\\
+      \\
       $R_1 = 15k\Omega$ \\ $R_2 = 133k\Omega$ \\ $R_3 = 133k\Omega$ \\
-      $R_4 = 12k\Omega + 10k\Omega$(potentiometer) \\ $R_5 = 10k\Omega$ \\
-      $R_6 = 15k\Omega + 5k\Omega$(potentiometer) \\
-      This gives to following response to the input Voltage $U_{in}$
+      $R_4 = 12k\Omega + 10k\Omega$\text{ potentiometer} \\ $R_5 = 10k\Omega$ \\
+      $R_6 = 15k\Omega + 5k\Omega$\text{ potentiometer} \\
+      \\This gives to following response to the input Voltage $U_{in}$\\
       \begin{figure}[h]
-        \includesvg[,width = \textwidth,svgpath=./plots/]{plotimage}
-        \caption{temp. sensor shifter circuit}
+        \includegraphics[width = \textwidth]{./plots/plot_image.pdf}
+        \caption{Theoretical response of temp. shifter}
         \label{fig2}
+      \end{figure}
+
+    \subsection{Heater, cooler circuit}
+      \begin{figure}[h]
+        \includegraphics[width = \textwidth]{circ2.png}
+        \caption{Heater/cooler shifter circuit}
+        \label{fig3}
+      \end{figure}
+      The output range from the Arduino's DAC is $$0.55V < U_{DAC} < 2.75V$$
+      The regulation voltage from the heater and cooler is 0 to 10V. First the
+      voltage from the DAC out needs to be reduced by 0.55V and then amplified
+      such that the maximum out from the DAC corresponds to the maximum in from
+      the heater/cooler. The amplification is set with the resistance RG.
+      The values found by Vanessa are (in $k\Omega$): \\
+      $R_a = 3.92k\Omega + 5k\Omega$\text{ potentiometer} \\ $R_b = 1k\Omega$ \\
+      $R_G = 27k\Omega + 10k\Omega$\text{ potentiometer} \\ \\
+      The output here can be described by the amplified difference of the two
+      input voltages. The amplification factor was adjusted such that it gives
+      the needed output range.
+      To both circuits many capacitances are added, which are only for filtering
+      the input +15V/-15V and the ref03 voltages from AC parts. This is done with
+      10nF and 100nF capacitances in parallel.
+
+    \subsection{Realization of the circuitboard}
+      All of the circuits were realized using a smd board. The circuitboard was
+      constructed using EAGLE Professional and made with a circuit board cutter.
+      It has the same proportions as the used arduino due, such that it fits
+      into the enclosure thats already existing.
+      \begin{figure}[h]
+        \includegraphics[width = \textwidth]{board.png}
+        \caption{Circuitboard layout}
+        \label{fig4}
+      \end{figure}
+      \\The resistors and the capacitances are directly soldered onto the board,
+      while the OP07 and the AD622 (not 620 as on the image) are put onto
+      headers. The complete board is shown here in fig. \ref{fig5}.
+      \begin{figure}[h]
+        \includegraphics[width = \textwidth]{boardbild.jpg}
+        \caption{Circuitboard picture}
+        \label{fig5}
+      \end{figure}
+      \\ Notice that the header for the left AD622 was placed in the opposite
+      direction, such that the marker for the top is actually on the other side
+      than the top is supposed to be.\\
+      Also some of the capacitances were not soldered in, on the design of the
+      board they were made as a precaution.\\
+      It was found that the heater/cooler cables add a capacitance which lead
+      to oscillations on the temperature measurement. We added $100 \Omega$
+      resistors on the heater/cooler output to resolve the issue.\\ In fig.
+      \ref{fig6} we see the board connected to the Arduino with the Ethernet
+      Shield 2 on top.\\
+      \begin{figure}[h]
+        \includegraphics[width = \textwidth]{boardwitharduino.jpg}
+        \caption{Board connected to Arduino}
+        \label{fig6}
       \end{figure}
 
 \end{document}
