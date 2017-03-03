@@ -19,3 +19,9 @@ For the commands see the protokoll.pdf under the section controlling the pid.
 The message returned will be shown in the terminal and also saved in the
 tempreg.log file. Should errors be produced by the client script they will also
 be saved in this file.
+To stop the client.py script either send the command stop (after that it will
+take some time for it to be abled to be restarted), or type
+
+killall python3
+
+which should also do the job.
