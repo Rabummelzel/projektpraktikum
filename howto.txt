@@ -1,0 +1,21 @@
+How to use the Arduino temperature control:
+
+After plugging in the Arduino it will show the IP-adress over the serial output,
+which can be read out with the Arduino IDE serial monitor (after selecting the
+right port). Should this IP somehow not be the same as in the script it has to
+be adjusted in the script (directly at the beginning of client.py).
+Now the client.py script can be started. Best start it like this:
+
+python3 client.py & disown
+
+Then it will run in the background and not get shut down after logging out.
+Now the client will save the data from the Arduino serial output to the file
+called temp.dat.
+To send a command run the controller.py script:
+
+python3 controller.py command
+
+For the commands see the protokoll.pdf under the section controlling the pid.
+The message returned will be shown in the terminal and also saved in the
+tempreg.log file. Should errors be produced by the client script they will also
+be saved in this file.
