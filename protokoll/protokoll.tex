@@ -6,6 +6,8 @@
 \usepackage{hyperref}
 \usepackage{subfigure}
 \usepackage{framed}
+\usepackage{float}
+\usepackage[justification=RaggedRight, singlelinecheck=false]{caption}
 \setmainfont{Liberation Serif}
 \geometry{a4paper,left=30mm,right=30mm, top=2cm, bottom=2cm}
 
@@ -31,17 +33,24 @@
         \label{fig1}
       \end{figure}
       \\The input range from the temperature sensor we are interested in is
-      $$-1.6V < U_{in} < 1.6V$$
+      $$-1.6 \, \text{V} < \text{U}_{\text{in}} < 1.6\, \text{V}$$
       The supply voltage of the op-amps is 15V. We want to have a cutoff after
       the first op-amp at the input range boundaries. This can be achieved with
       setting the amplification factor with $R_1$ and $R_2$. The output range
       should equal the input range of the Arduino analogue input which goes form
-      0-3.3V. The values found for the resistances are as follows (in $k\Omega$):
-      \\
-      $R_1 = 15k\Omega$ \\ $R_2 = 133k\Omega$ \\ $R_3 = 133k\Omega$ \\
-      $R_4 = 12k\Omega + 10k\Omega$\text{ potentiometer} \\ $R_5 = 10k\Omega$ \\
-      $R_6 = 15k\Omega + 5k\Omega$\text{ potentiometer} \\
-      \\This gives to following response to the input Voltage $U_{in}$\\
+      0-3.3V. The values found for the resistances are as follows (the added value
+      corresponds to a potentiometer in series): \\
+      \begin{table}[H]
+        \begin{tabular}{l|c c c c c c}
+          & $\text{R}_1$ & $\text{R}_2$ & $\text{R}_3$ & $\text{R}_4$
+          & $\text{R}_5$ & $\text{R}_6$ \\
+          \hline\vspace{5pt}
+          $\text{R}[\text{k}\Omega]$ & $15$ & $133$ & $133$ & $12 + 5$ & $10$
+          & $15 + 5$
+        \end{tabular}
+        \caption{Resistances for temp. shifter circuit}
+      \end{table}
+      This gives to following response to the input Voltage $U_{in}$\\
       \begin{figure}[h]
         \includegraphics[width = \textwidth]{./plots/plot_image.pdf}
         \caption{Theoretical response of temp. shifter}
@@ -54,15 +63,22 @@
         \caption{Heater/cooler shifter circuit}
         \label{fig3}
       \end{figure}
-      The output range from the Arduino's DAC is $$0.55V < U_{DAC} < 2.75V$$
+      The output range from the Arduino's DAC is $$0.55\, \text{V} <
+      \text{U}_{\text{DAC}} < 2.75\, \text{V}$$
       The regulation voltage from the heater and cooler is 0 to 10V. First the
       voltage from the DAC out needs to be reduced by 0.55V and then amplified
       such that the maximum out from the DAC corresponds to the maximum in from
       the heater/cooler. The amplification is set with the resistance RG.
-      The values found by Vanessa are (in $k\Omega$): \\
-      $R_a = 3.92k\Omega + 5k\Omega$\text{ potentiometer} \\ $R_b = 1k\Omega$ \\
-      $R_G = 27k\Omega + 10k\Omega$\text{ potentiometer} \\ \\
-      The output here can be described by the amplified difference of the two
+      The values found by Vanessa are: \\
+      \begin{table}[H]
+        \begin{tabular}{l|c c c}
+          & $\text{R}_\text{a}$ & $\text{R}_\text{b}$ & $\text{R}_\text{G}$ \\
+          \hline\vspace{5pt}
+          $\text{R}[\text{k}\Omega]$ & $3.92 + 5$ & $1$ & $27+10$
+        \end{tabular}
+        \flushleft \caption{Resistances for heater/cooler shifter circuit}
+      \end{table}
+      \noindent The output here can be described by the amplified difference of the two
       input voltages. The amplification factor was adjusted such that it gives
       the needed output range.
       To both circuits many capacitances are added, which are only for filtering
@@ -82,11 +98,6 @@
       \\The resistors and the capacitances are directly soldered onto the board,
       while the OP07 and the AD622 (not 620 as on the image) are put onto
       headers. The complete board is shown here in Figure~ \ref{fig5}.
-      \begin{figure}
-        \includegraphics[width = \textwidth]{boardbild.jpg}
-        \caption{Circuitboard picture}
-        \label{fig5}
-      \end{figure}
       \\ Notice that the header for the left AD622 was placed in the opposite
       direction, such that the marker for the top is actually on the other side
       than the top is supposed to be.\\
@@ -97,19 +108,23 @@
       resistors on the heater/cooler output to resolve the issue.\\ In Figure~
       \ref{fig6} we see the board connected to the Arduino with the Ethernet
       Shield 2 on top.\\
-      \begin{figure}
+      \begin{figure}[H]
+        \includegraphics[width = \textwidth]{boardbild.jpg}
+        \caption{Circuitboard picture}
+        \label{fig5}
+      \end{figure}
+      \begin{figure}[H]
         \includegraphics[width = \textwidth]{boardwitharduino.jpg}
         \caption{Board connected to Arduino}
         \label{fig6}
       \end{figure}
       After everything on the board is done it is put into the housing in the
       cabinet.
-      \begin{figure}
+      \begin{figure}[H]
         \includegraphics[width = \textwidth]{imschrank.jpg}
         \caption{Board and Arduino in the housing}
         \label{fig7}
       \end{figure}
-      \\
     \section{Measurements}
       \subsection{Measurements for the heater/cooler shifter circuit}
         I measure the output voltage from the heater and cooler shifter while
@@ -244,15 +259,15 @@
           sensors T\_PID, T\_Top\_Door, T\_Top\_Window.}
           \label{fig11}
         \end{figure} \\
-        The mean of the histogram is at $\mu = 23.515K$ and the standard
-        deviation at $\sigma = 0.057K.$ \\
+        The mean of the histogram is at $\mu = 23.515\,\text{°C}$ and the standard
+        deviation at $\sigma = 0.057\,\text{K}$. \\
         We see that for the sensor the PID uses to regulate we have a good
-        nearly constant temperature (fluctuations $\sim 0.5 °C$ and
-        $\sigma = 0.057K$). The other two sensor show a fast rise(window) and a
-        fall(door) in temperature at around 12 o'clock. I can now look at the
-        cooler/heater values and see that the cooler was shut off up until
-        nearly 12 o'clock and then turned on (probably due to rise in outside
-        temperature), while the heater value decreased. \\
+        nearly constant temperature (fluctuations $\sim 0.5\,\text{K}$ and
+        $\sigma = 0.057\,\text{K}$). The other two sensor show a fast rise
+        (window) and a fall(door) in temperature at around 12 o'clock. I can now
+        look at the cooler/heater values and see that the cooler was shut off up
+        until nearly 12 o'clock and then turned on (probably due to rise in
+        outside temperature), while the heater value decreased. \\
         The heater is located closer to the window and the cooler closer to the
         door.
         The rise in outside temperature could be due to sun coming in the
@@ -262,8 +277,8 @@
       \subsubsection{Change in temperature reference}
       To see how the system reacts to rapid changes in temperature it is much
       easier to look at a change in the reference temperature. For this we
-      change the value of the reference temperature from 450 Bits ($\sim 23.5 °C$)
-      to 500 Bits ($\sim 24.8 °C$). \\
+      change the value of the reference temperature from 450 Bits ($\sim 23.5
+      \,\text{K}$) to 500 Bits ($\sim 24.8 \,\text{°C}$). \\
       Again we look at the temperature values from the 3 sensors.
       \begin{figure}[h!]
         \hspace{-40pt}
@@ -297,7 +312,8 @@
         \label{fig13}
       \end{figure}\\
       The time constants are:
-      $$\tau_{up} = (28.6 \pm 2.3) min, \;\;\; \tau_{down} = (33.1 \pm 2.4) min$$
+      $$\tau_{\text{up}} = (28.6 \pm 2.3) \,\text{min}, \;\;\; \tau_{\text{down}} =
+      (33.1 \pm 2.4)\,\text{min}$$
       It is also visible that the temperature does not overshoot and does not
       strongly oscillate. \\\\
       I do another measurement to confirm the behaviour. This one is done at
@@ -310,9 +326,11 @@
       This is also visible for the Door temperature, which we can also fit
       (Figure~\ref{fig16} ). \\
       Here we get
-      $$\tau_{up} = (32.5 \pm 2.0) min, \;\;\; \tau_{down} = (25.4 \pm 1.5) min$$
+      $$\tau_{\text{up}} = (32.5 \pm 2.0)\,\text{min}, \;\;\; \tau_{\text{down}} =
+      (25.4 \pm 1.5) \,\text{min}$$
       for the PID-sensor and
-      $$\tau_{up} = (34.7 \pm 2.0) min, \;\;\; \tau_{down} = (32.7 \pm 1.6) min$$
+      $$\tau_{\text{up}} = (34.7 \pm 2.0) \,\text{min}, \;\;\;
+      \tau_{\text{down}} = (32.7 \pm 1.6) \,\text{min}$$
       We get a higher value for the upwards slope and a slightly faster
       downwards slope than before, which might be cause by lower outside
       temperature. We see here that some time after the temperature reaches the
@@ -373,13 +391,14 @@
       door and window temperatures, as there is no big jump in them (unlike
       Figure~\ref{fig11} )\\
       From the histograms (Figure~\ref{fig19} (d-f) ) we get the mean and standard deviations for the PID
-      sensor: $$\mu = 23.514K \;\; \sigma = 0.075K$$
-      for the Top\_Door sensor: $$\mu = 22.652K \;\; \sigma = 0.073K$$
-      and for the Top\_Window sensor: $$\mu = 24.927K \;\; \sigma = 0.267K$$ \\
+      sensor: $$\mu = 23.514\,\text{°C} \;\; \sigma = 0.07\,\text{K}$$
+      for the Top\_Door sensor: $$\mu = 22.652\,\text{°C} \;\; \sigma = 0.073\,\text{K}$$
+      and for the Top\_Window sensor: $$\mu = 24.927\,\text{°C} \;\;
+      \sigma = 0.267\,\text{K}$$ \\
       We see that the temperature is fairly stable near the door and the PID
-      temperature sensor ($\sigma = 0.076 K$ slightly higher than before), with
+      temperature sensor ($\sigma = 0.076 \,\text{K}$ slightly higher than before), with
       not even half a degree deviations. The temperature near the window varies
-      more, with a standard deviation of $\sigma = 0.267K$.\\
+      more, with a standard deviation of $\sigma = 0.267\,\text{°C}$.\\
       Its also visible that the PID sensor seems to show more oscillation on
       daytime and at the window there is a clear rise in temperature over the day.
       \\What can also be seen is that the door temperature seems to be rather
@@ -387,12 +406,16 @@
       and the opposite is the case for the window temperature. This can also be
       seen by calculating the weighted difference of points to the right to
       points to the left of the mean. If that number is positive it means that
-      we have more points to the left. \\
-      Calculation yields the following values: \\
-      PID:\hspace{36pt}$9.67\mathrm{e}{-04}$\\
-      Door:\hspace{30pt}$1.77\mathrm{e}{-02}$\\
-      Window: $-1.05\mathrm{e}{-02}$\\
-      which agree with the asumptions.
+      we have more points to the left.
+      Calculation yields the following values: \vspace{-5pt}
+      \begin{table}[H]
+        \begin{tabular}{c | c | c}
+          PID & Door & Window \\
+          \hline
+          $9.67\mathrm{e}{-04}$ & $1.77\mathrm{e}{-02}$ & $-1.05\mathrm{e}{-02}$
+        \end{tabular}
+      \end{table}
+      \vspace{-5pt} which agree with the asumptions.
       \begin{figure}[h!]
         \hspace{-40pt}
         \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(23)}}
@@ -405,5 +428,5 @@
         \caption{Temperature stabilization over several days with temp. from
         sensors T\_PID, T\_Top\_Door, T\_Top\_Window.}
         \label{fig19}
-      \end{figure} \\
+      \end{figure}
 \end{document}
