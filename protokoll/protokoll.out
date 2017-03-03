@@ -2,3 +2,13 @@
 \BOOKMARK [2][-]{subsection.1.1}{Temperature sensor circuit}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Heater, cooler circuit}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{Realization of the circuitboard}{section.1}% 4
+\BOOKMARK [1][-]{section.2}{Measurements}{}% 5
+\BOOKMARK [2][-]{subsection.2.1}{Measurements for the heater/cooler shifter circuit}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Measurements of temperature sensor circuit}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{The temperature control system}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Controlling the PID}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Testing the temperature control system}{section.3}% 10
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Holding the temperature constant}{subsection.3.2}% 11
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Change in temperature reference}{subsection.3.2}% 12
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Turning the lights on}{subsection.3.2}% 13
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Temperature stabilization over several days}{subsection.3.2}% 14
