@@ -1,4 +1,7 @@
 \documentclass[12pt]{scrartcl}
+\makeatletter
+\let\@noitemerr\relax
+\makeatother
 \usepackage{geometry}
 \usepackage{amsmath}
 \usepackage[english]{babel}
@@ -53,7 +56,7 @@
       output voltage does not exceed the input range of the Arduino. This can be
       achieved with
       setting the amplification factor with $\text{R}_1$ and $\text{R}_2$. The output range
-      should equal the input range of the Arduino analogue input which goes form
+      should equal the input range of the Arduino analogue input which goes from
       0-3.3V. The values found for the resistances are as follows (the added value
       corresponds to a potentiometer in series): \\
       \begin{table}[H]\label{tempres}
@@ -66,7 +69,7 @@
         \end{tabular}
         \caption{Resistances for temp. shifter circuit}
       \end{table}
-      This gives to following response to the input Voltage $U_{in}$\\
+      This gives to following response to the input Voltage $\text{U}_{\text{in}}$\\
       \begin{figure}[H]
         \includegraphics[width = \textwidth]{./plots/plot_image.pdf}
         \caption{The theoretical response of the temperature shifter circuit
@@ -80,7 +83,7 @@
         \includegraphics[width = \textwidth]{circ2.png}
         \caption{Shifter circuits for the heater and cooler outputs. A reference
         voltage source REF03 and a voltage dividing circuit are used to subtract
-        the 0.55~V minimum output voltage from the Arduino at the differencial
+        the 0.55~V minimum output voltage from the Arduino at the differential
         amplifier AD622.}
         \label{fig3}
       \end{figure}
@@ -89,7 +92,7 @@
       The regulation voltage from the heater and cooler goes from 0~V to 10~V. First the
       voltage from the DAC output needs to be reduced by 0.55~V and then amplified
       such that the maximum output from the DAC corresponds to the maximum input from
-      the heater/cooler. The amplification is set with the resistance RG.
+      the heater/cooler. The amplification is set with the resistance $\text{R}_\text{G}$.
       The values found by Vanessa are: \\
       \begin{table}[H] \label{hcres}
         \begin{tabular}{l|c c c}
@@ -107,12 +110,12 @@
       10~nF and 100~nF capacitances in parallel.
 
     \subsection{Realization of the circuitboard}
-      All of the circuits were realized using a SMD board. The circuitboard was
+      All of the circuits were realized using a SMD board. The circuit board was
       constructed using EAGLE Professional and made with a circuit board cutter.
       It has the same proportions as the used Arduino Due, such that it fits
       into the enclosure thats already existing.
       \\The resistors and the capacitances are directly soldered onto the board,
-      while the OpAmp OP07 and the differencial amplifier AD622
+      while the OpAmp OP07 and the differential amplifier AD622
       (not 620 as on the image) are put onto
       headers. The complete board is shown here in Figure~ \ref{fig5}.
       \\ Notice that the header for the left AD622 was placed in the opposite
@@ -129,8 +132,8 @@
       cabinet.
       \begin{figure}[H]
         \includegraphics[width = \textwidth]{board.png}
-        \caption{The circuitboard layout was done using EAGLE Professional.
-        It constists of two planes.}
+        \caption{The circuit board layout was done using EAGLE Professional.
+        It consists of two planes.}
         \label{fig4}
       \end{figure}
       \begin{figure}[H]
@@ -160,20 +163,20 @@
           \subfigure[]{\includegraphics[width = 0.55\textwidth]{./plots/plot_image(1)}}
           \subfigure[]{\includegraphics[width = 0.55\textwidth]{./plots/plot_image(2)}}
           \caption{Calibration of the heater and cooler shifter circuits. A good
-          linear behaviour is visible for both, the maximum voltage of $10$~V is
+          linear behaviour is visible for both, the maximum voltage of 10~V is
           not exceeded.}
           \label{fig8}
         \end{figure}
       \subsection{Measurements of temperature sensor circuit}
-        The minimum and maximum values of $-1.6$~V and $1.6$~V should lead to
-        output values of $0$~V and $3.3$~V. This requirement is used to adjust
+        The minimum and maximum values of -1.6~V and 1.6~V should lead to
+        output values of 0~V and 3.3~V. This requirement is used to adjust
         the potentiometers. The complete voltage curve is shown below.
         \begin{figure}[H]
           \centering
           \includegraphics[width = 0.55
           \textwidth]{./plots/plot_image(3)}
           \caption{Response of the temperature shifter circuit. It is in good
-          accordance to the theoretical expactation, above and below the
+          accordance to the theoretical expectation, above and below the
           input range the output voltage reaches a plateau.}
           \label{fig9}
         \end{figure}
@@ -185,18 +188,18 @@
       software running on the Arduino. This was originally developed by Vanessa
       Scheller.
       \\One of the tasks was to install the Ethernet Shield 2 on the Arduino in
-      order for the PID controller to be abled to communicate more easily with
+      order for the PID controller to be able to communicate more easily with
       a computer. The existing possibility to communicate with the Arduino was
-      to do it over the usb serial interface of the Arduino which allows to
+      to do it over the USB serial interface of the Arduino which allows to
       read out data and also send data to the Arduino, but requires a computer
       to be connected to the Arduino at all times. The advantage of a network
-      interface is that it just needs a connected ethernet cable to the Arduino.
+      interface is that it just needs a connected Ethernet cable to the Arduino.
       \\The Ethernet Shield 2 is just connected to the Arduino like any other
       Arduino shield, by just plugging it on top of the Arduino. The Arduino
       acts as a server which communicates with a client program
        running on the tritium-vserver.
       \\The client sends commands directly to the Arduino which get handled
-      there in a defined time intervall. The Arduino sends back a response
+      there in a defined time interval. The Arduino sends back a response
       including information.
       \\The client program runs in the background and issues the command to
       receive the serial output from the Arduino and stores those directly in
@@ -220,7 +223,8 @@
         \item Heater set value (in 8 bit resolution from 0 to 255)
         \item Cooler set value (in 8 bit resolution from 0 to 255)
         \item Days running
-      \end{enumerate}\hspace{10pt}
+      \end{enumerate}
+      \hspace{10pt}
 
       \noindent\textbf{Getting the PID parameters and the temperature set value} \\
       Send the command \textbf{\textit{gpid}} to receive the values $K_P$, $T_N$
@@ -235,7 +239,7 @@
       \textit{p,i,d} for the respective part of the regulator. \textit{y} can
       also be \textit{f} for a fixed value of the heater/cooler set value (this
       turns off the PID control). \#\#\# corresponds to the wanted value (again in
-      8 bits from 0 to 255). The Arduino programm checks whether the value is
+      8 bits from 0 to 255). The Arduino program checks whether the value is
       in bounds.\\
 
       \noindent\textbf{Setting the temperature reference}\\
@@ -260,14 +264,14 @@
       \\
     \subsection{Testing the temperature control system}
       The board is now connected to the Arduino, the temperature sensor and the
-      heater/cooler. \\
+      heater/cooler.
       A measurement is done using the already existing sensors at the window and
       the door.
-      \subsubsection{Holding the temperature constant}.
+      \subsubsection{Holding the temperature constant}
       To see how well the temperature stabilization works over one day the data
       from three sensors is plotted. A histogram is used to make an estimate on
       how much the temperature fluctuates. This is only done for the PID temperature
-      sensor, because the others show a unexpected behaviour.
+      sensor, because the others show a unexpected behavior.
       See Figure~\ref{fig11} (a-c) for the temperatures and Figure~\ref{fig11} (d)
       for the histogram.
         \begin{figure}[h!]
@@ -342,7 +346,7 @@
       (33.1 \pm 2.4)\,\text{min}$$
       It is also visible that the temperature does not overshoot and does not
       strongly oscillate. \\\\
-      Another measurement is made to confirm the behaviour. This one is done at
+      Another measurement is made to confirm the behavior. This one is done at
       night (Temperature to 500 Bits at 19:11 and back to 450 Bits at 22:45)
       (see Figure~\ref{fig14} ). \\ The fitting procedure is also repeated
       (Figure~\ref{fig15} ). A similar value for the upwards slope is computed. The
@@ -364,7 +368,7 @@
         \hspace{-20pt}
         \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(14)}}
         \subfigure[]{\hspace{3cm}\includegraphics[width = 0.65\textwidth]{./plots/plot_image(15)}}
-        \caption{Response to change in intemperature reference. The response
+        \caption{Response to change in in temperature reference. The response
         again looks much faster at the PID sensor and the door sensor than at
         the window temperature sensor.}
         \label{fig14}
@@ -500,16 +504,16 @@
     I also used the same resistance values for the resistors for the
     \hyperref[tempres]{temperature} and the \hyperref[hcres]{heater/cooler}
     shifter circuit.\\
-    With the network interface I was also abled to do a more thourough testing
+    With the network interface I was also able to do a more thorough testing
     of the temperature control than before. The temperature control system
     should of course hold the temperature as constant as possible under
     influences that would change the temperature, such as change in daytime
     temperature. I used three different sensor which were placed at different
     spots in the control room. The temperature near the door showed a very
-    good constant temperature behaviour ($\sigma = 0.073\,\text{K}$), the
+    good constant temperature behavior ($\sigma = 0.073\,\text{K}$), the
     temperature near the window does oscillate a little bit more with
     $\sigma = 0.267\,\text{K}$ (Figure~\ref{fig19}). \\
-    With changing the temperature reference I could examine the behaviour for a
+    With changing the temperature reference I could examine the behavior for a
     rapid change in temperature. With this one can get a good estimate for the
     time it takes for the system to regulate back to the reference temperature.
     I calculated time constants which are circa 30 minutes for a change of
