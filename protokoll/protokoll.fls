@@ -298,6 +298,9 @@ INPUT ./plots/plot_image(28).pdf
 INPUT /home/stefan/Projektpraktikum/protokoll/schaltplanvan.png
 INPUT /home/stefan/Projektpraktikum/protokoll/schaltplanvan.png
 INPUT schaltplanvan.png
+INPUT /usr/share/texlive/texmf-dist/tex/latex/euenc/eu2lmtt.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/euenc/eu2lmtt.fd
+INPUT /home/stefan/.texmf-var/luatex-cache/generic/fonts/otf/lmmono12-regular.luc
 INPUT /home/stefan/Projektpraktikum/protokoll/protokoll.aux
 INPUT /home/stefan/Projektpraktikum/protokoll/protokoll.out
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb

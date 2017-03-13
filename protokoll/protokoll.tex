@@ -34,20 +34,24 @@
     A temperature sensor, a heater and a cooler are to be connected to a Arduino
     board. In order for it to work we need to have shifters for the voltage
     range to fit the inputs/outputs on the Arduino. This was first done by
-    Vanessa Scheller using cables and a breadboard, I took her design and
-    reworked it to be used on a milled circuit board and SMD parts.
+    Vanessa Scheller using cables and a breadboard, her design was reworked
+    using a milled circuit board and SMD-parts.
 
     \subsection{Temperature sensor circuit}
       The circuit for the temperature sensor looks as follows:
       \begin{figure}[h]
         \includegraphics[width = \textwidth]{circ.png}
-        \caption{Temp. sensor shifter circuit}
+        \caption{Shifter circuit for the temperature input. The design with
+        two OpAmps ensures that outside the desired input range the output
+        voltages do not change anymore.}
         \label{fig1}
       \end{figure}
       \\The input range from the temperature sensor we are interested in is
       $$-1.6 \, \text{V} < \text{U}_{\text{in}} < 1.6\, \text{V}$$
-      The supply voltage of the op-amps is 15V. We want to have a cutoff after
-      the first op-amp at the input range boundaries. This can be achieved with
+      The supply voltage of the op-amps is 15~V. A cutoff after
+      the first OpAmp at the input range boundaries is needed such that the
+      output voltage does not exceed the input range of the Arduino. This can be
+      achieved with
       setting the amplification factor with $\text{R}_1$ and $\text{R}_2$. The output range
       should equal the input range of the Arduino analogue input which goes form
       0-3.3V. The values found for the resistances are as follows (the added value
@@ -63,22 +67,27 @@
         \caption{Resistances for temp. shifter circuit}
       \end{table}
       This gives to following response to the input Voltage $U_{in}$\\
-      \begin{figure}[h]
+      \begin{figure}[H]
         \includegraphics[width = \textwidth]{./plots/plot_image.pdf}
-        \caption{Theoretical response of temp. shifter}
+        \caption{The theoretical response of the temperature shifter circuit
+        shows the linear slope at the input range and the constant output range
+        outside the input range.}
         \label{fig2}
       \end{figure}
 
     \subsection{Heater, cooler circuit}
-      \begin{figure}[h]
+      \begin{figure}[H]
         \includegraphics[width = \textwidth]{circ2.png}
-        \caption{Heater/cooler shifter circuit}
+        \caption{Shifter circuits for the heater and cooler outputs. A reference
+        voltage source REF03 and a voltage dividing circuit are used to subtract
+        the 0.55~V minimum output voltage from the Arduino at the differencial
+        amplifier AD622.}
         \label{fig3}
       \end{figure}
       The output range from the Arduino's DAC is $$0.55\, \text{V} <
       \text{U}_{\text{DAC}} < 2.75\, \text{V}$$
-      The regulation voltage from the heater and cooler goes from 0 to 10V. First the
-      voltage from the DAC output needs to be reduced by 0.55V and then amplified
+      The regulation voltage from the heater and cooler goes from 0~V to 10~V. First the
+      voltage from the DAC output needs to be reduced by 0.55~V and then amplified
       such that the maximum output from the DAC corresponds to the maximum input from
       the heater/cooler. The amplification is set with the resistance RG.
       The values found by Vanessa are: \\
@@ -94,8 +103,8 @@
       input voltages. The amplification factor was adjusted such that it gives
       the needed output range.
       To both circuits many capacitances are added, which are for filtering
-      the input +15V/-15V and the ref03 voltages from AC voltage parts. This is done with
-      10nF and 100nF capacitances in parallel.
+      the input +15~V/-15~V and the reference voltage from AC voltage parts. This is done with
+      10~nF and 100~nF capacitances in parallel.
 
     \subsection{Realization of the circuitboard}
       All of the circuits were realized using a SMD board. The circuitboard was
@@ -103,68 +112,71 @@
       It has the same proportions as the used Arduino Due, such that it fits
       into the enclosure thats already existing.
       \\The resistors and the capacitances are directly soldered onto the board,
-      while the OP07 and the AD622 (not 620 as on the image) are put onto
-      headers. The complete board is shown here in Figure~ \ref{fig5} and \ref{fig5}.
+      while the OpAmp OP07 and the differencial amplifier AD622
+      (not 620 as on the image) are put onto
+      headers. The complete board is shown here in Figure~ \ref{fig5}.
       \\ Notice that the header for the left AD622 was placed in the opposite
       direction, such that the marker for the top is actually on the other side
       than the top is supposed to be.\\
       Also some of the capacitances were not soldered in, on the design of the
       board they were made as a precaution.\\
       It was found that the heater/cooler cables add a capacitance which lead
-      to oscillations on the temperature measurement. We added $100 \Omega$
-      resistors on the heater/cooler output to resolve the issue.\\ In Figure~
-      \ref{fig6} we see the board connected to the Arduino with the Ethernet
-      Shield 2 on top.\\
+      to oscillations on the temperature measurement. Adding $100 \Omega$
+      resistors on the heater/cooler output resolved the issue.\\ In Figure~
+      \ref{fig6} the board connected to the Arduino with the Ethernet
+      Shield 2 on top is shown. \\
+      After everything on the board is done it is put into the housing in the
+      cabinet.
       \begin{figure}[H]
         \includegraphics[width = \textwidth]{board.png}
-        \caption{Circuitboard layout}
+        \caption{The circuitboard layout was done using EAGLE Professional.
+        It constists of two planes.}
         \label{fig4}
       \end{figure}
       \begin{figure}[H]
         \includegraphics[width = \textwidth]{boardbild.jpg}
-        \caption{Circuitboard picture}
+        \caption{A picture of the circuit board with input / output configuration.}
         \label{fig5}
       \end{figure}
       \begin{figure}[H]
         \includegraphics[width = \textwidth]{boardwitharduino.jpg}
-        \caption{Board connected to Arduino}
+        \caption{The circuit board connected to the Arduino. On top of the
+        Arduino is the Ethernet Shield 2. }
         \label{fig6}
       \end{figure}
-      After everything on the board is done it is put into the housing in the
-      cabinet.
       \begin{figure}[H]
         \includegraphics[width = \textwidth]{imschrank.jpg}
-        \caption{Board and Arduino in the housing}
+        \caption{The complete setup in the housing. The USB cable can be used
+        to establish a serial communication with a computer.}
         \label{fig7}
       \end{figure}
+    \newpage
     \section{Measurements}
       \subsection{Measurements for the heater/cooler shifter circuit}
-        I measure the output voltage from the heater and cooler shifter while
+        First the output voltage from the heater and cooler shifter is measured while
         changing the input through the Arduino DAC outputs. The DAC outputs use
         8Bit resolution, so we measure from 0 to 255 Bits.
         \begin{figure}[h]
           \subfigure[]{\includegraphics[width = 0.55\textwidth]{./plots/plot_image(1)}}
           \subfigure[]{\includegraphics[width = 0.55\textwidth]{./plots/plot_image(2)}}
-          \caption{Heater/cooler shifter calibration}
+          \caption{Calibration of the heater and cooler shifter circuits. A good
+          linear behaviour is visible for both, the maximum voltage of $10$~V is
+          not exceeded.}
           \label{fig8}
         \end{figure}
-        \\It's visible that the components act as expected, i.e. linearity is
-        achieved. The minimum out voltages are near enough to 0 and the maximum
-        voltages are close enough to 10V.
       \subsection{Measurements of temperature sensor circuit}
-        We first measure the voltages (and set them with the variable
-        resistances) on the output for the min/max values -1.6V/1.6V and make
-        sure that above/below these voltages the output voltage does not change
-        anymore. Then we measure the values inbetween.
-        \begin{figure}[h]
+        The minimum and maximum values of $-1.6$~V and $1.6$~V should lead to
+        output values of $0$~V and $3.3$~V. This requirement is used to adjust
+        the potentiometers. The complete voltage curve is shown below.
+        \begin{figure}[H]
           \centering
           \includegraphics[width = 0.55
           \textwidth]{./plots/plot_image(3)}
-          \caption{Response of the temp. shifter}
+          \caption{Response of the temperature shifter circuit. It is in good
+          accordance to the theoretical expactation, above and below the
+          input range the output voltage reaches a plateau.}
           \label{fig9}
         \end{figure}
-        \\ We see that we have linearity between -1.6V and 1.6V (slight drop
-        before 1.6V) and afterwards the desired plateaus.
     \section{The temperature control system}
       \subsection{Controlling the PID} \label{sec:control}
       The temperature value gets read out on a Arduino Due platform. It then
@@ -172,7 +184,7 @@
       for the heater / cooler with a PID controller, which was realized as a
       software running on the Arduino. This was originally developed by Vanessa
       Scheller.
-      \\One of my tasks was to install the Ethernet Shield 2 on the Arduino in
+      \\One of the tasks was to install the Ethernet Shield 2 on the Arduino in
       order for the PID controller to be abled to communicate more easily with
       a computer. The existing possibility to communicate with the Arduino was
       to do it over the usb serial interface of the Arduino which allows to
@@ -202,8 +214,7 @@
       received are:
       \begin{enumerate}
         \item Measurement number (resets every new running day)
-        \item Mean temperature value over 1 minute. (in 10 bit resolution from
-          0 to 1023)
+        \item Mean temperature value over 1 minute. (in 10 bit resolution from 0 to 1023)
         \item Difference of current temperature to set value of temperature
         \item Difference of mean temperature to set value of temperature
         \item Heater set value (in 8 bit resolution from 0 to 255)
@@ -241,24 +252,24 @@
       \begin{figure}[h]
         \centering
         \includegraphics[width = 0.65\textwidth]{./plots/plot_image(4)}
-        \caption{Calibration of temperature sensor}
+        \caption{Calibration of temperature sensor done by Vanessa Scheller.
+        The standard value the PID controller regulates to is at 450~Bits,
+        corresponding to 23.5~°C.}
         \label{fig10}
       \end{figure}
       \\
     \subsection{Testing the temperature control system}
       The board is now connected to the Arduino, the temperature sensor and the
       heater/cooler. \\
-      Now I measure for a constant temperature reference the temperature with
-      already existing sensors (i.e. top window, top door and the PID temperature
-      sensor).
-      \subsubsection{Holding the temperature constant}
-        We want to see now, how well the temperature stabilization works for
-        keeping the temperature constant over the day (18.02.2017). We get the
-        data for one day from the THee-Files located in the tritium-drive (the
-        pid-client program also produces Thee-files there). See
-        Figure~\ref{fig11} (a-c) for the temperatures.
-        Also a histogram of the data at the PID-sensor is plotted in
-        Figure~\ref{fig11} (d).
+      A measurement is done using the already existing sensors at the window and
+      the door.
+      \subsubsection{Holding the temperature constant}.
+      To see how well the temperature stabilization works over one day the data
+      from three sensors is plotted. A histogram is used to make an estimate on
+      how much the temperature fluctuates. This is only done for the PID temperature
+      sensor, because the others show a unexpected behaviour.
+      See Figure~\ref{fig11} (a-c) for the temperatures and Figure~\ref{fig11} (d)
+      for the histogram.
         \begin{figure}[h!]
           \hspace{-40pt}
           \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(5)}}
@@ -266,17 +277,18 @@
           \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(6)}}
           \subfigure[]{\hspace{-40pt}\includegraphics[width = 0.65\textwidth]{./plots/plot_image(7)}}
           \subfigure[]{\hspace{-20pt}\includegraphics[width = 0.65\textwidth]{./plots/plot_image(8)}}
-          \caption{Temperature stabilization over one day with temp. from
-          sensors T\_PID, T\_Top\_Door, T\_Top\_Window.}
+          \caption{Temperature stabilization over one day with temperature from
+          sensors T\_PID, T\_Top\_Door, T\_Top\_Window. The PID-sensor is well
+          regulated, while the door and window sensor show a fall/rise in temperature
+          at around 12 o'clock.}
           \label{fig11}
         \end{figure} \\
         The mean of the histogram is at $\mu = 23.515\,\text{°C}$ and the standard
         deviation at $\sigma = 0.057\,\text{K}$. \\
-        We see that for the sensor the PID uses to regulate to we have a good
-        nearly constant temperature (fluctuations $\sim 0.5\,\text{K}$ and
-        $\sigma = 0.057\,\text{K}$). The other two sensor show a fast rise
-        (window) and a fall(door) in temperature at around 12 o'clock. I can now
-        look at the cooler/heater values and see that the cooler was shut off up
+        The sensor the PID uses to regulate has a good
+        nearly constant temperature. The fall/rise of the temperature near
+        the door and window can be described as follows. Looking
+        at the cooler/heater values shows that the cooler was shut off up
         until nearly 12 o'clock and then turned on (probably due to rise in
         outside temperature), while the heater value decreased. \\
         The heater is located closer to the window and the cooler closer to the
@@ -284,26 +296,27 @@
         The rise in outside temperature could be due to sun coming in the
         windows thus raising the temperature there fast. The drop at the door
         should then be due to the cooler being turned on.
-      \newpage
       \subsubsection{Change in temperature reference}
       To see how the system reacts to rapid changes in temperature it is much
-      easier to look at a change in the reference temperature. For this we
-      change the value of the reference temperature from 450 Bits ($\sim 23.5
+      easier to look at a change in the reference temperature. For this the value
+      of the reference temperature is changed from 450 Bits ($\sim 23.5
       \,\text{°C}$) to 500 Bits ($\sim 24.8 \,\text{°C}$). \\
-      Again we look at the temperature values from the 3 sensors.
-      \begin{figure}[h!]
+      \begin{figure}[H]
         \hspace{-40pt}
         \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(9)}}
         \hspace{-20pt}
         \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(10)}}
         \subfigure[]{\hspace{3cm}\includegraphics[width = 0.65\textwidth]{./plots/plot_image(11)}}
-        \caption{Respose to change in intemperature reference}
+        \caption{The response in the change of the temperature reference looks
+        much sharper on the door and PID temperature sensors. The window temperature
+        sensor reacts slower and the rise is not as fast.}
         \label{fig12}
-      \end{figure} \\
+      \end{figure}
       It's visible that the temperatures at the door and at the PID sensor react
       very similarly, the temperature at the window seems to react a little
       slower.\\
-      I can now compute the time constant of the system with the following fit:
+      The reaction time can be characterized with the following fit for a first
+      order system.
       \begin{equation*}
         f(t) = B + A(1-e^{-t/\tau})
       \end{equation*}
@@ -312,31 +325,33 @@
         f(t) = B + A e^{-t/\tau}
       \end{equation*}
       for the downwards slope. \\
-      For the fit to work we need errors for the temperature values. For this
-      we assume a constant error of 0.1 °C. The bounds are set to the time the
+      For the fit to work errors for the temperature values are needed.
+      A constant error of $0.1$~K is assumed. The bounds are set to the time the
       temperature reference was set.
-      \begin{figure}[h!]
+      \begin{figure}[H]
         \centering
         \includegraphics[width = \textwidth]{./plots/plot_image(12)}
         \caption{Response of the PID-controller for a change of 50 bits in
-        temperature}
+        temperature with fitted exponential rise and falloff. The reduced
+        chi-square values of 0.325 and 0.612 for the rise and falloff
+        make the fit seem plausible.}
         \label{fig13}
-      \end{figure}\\
+      \end{figure}
       The time constants are:
       $$\tau_{\text{up}} = (28.6 \pm 2.3) \,\text{min}, \;\;\; \tau_{\text{down}} =
       (33.1 \pm 2.4)\,\text{min}$$
       It is also visible that the temperature does not overshoot and does not
       strongly oscillate. \\\\
-      I do another measurement to confirm the behaviour. This one is done at
+      Another measurement is made to confirm the behaviour. This one is done at
       night (Temperature to 500 Bits at 19:11 and back to 450 Bits at 22:45)
-      (see Figure~\ref{fig14} ). \\ I also repeat the fitting procedure
-      (Figure~\ref{fig15} ). We get a similar value for the upwards slope. The
+      (see Figure~\ref{fig14} ). \\ The fitting procedure is also repeated
+      (Figure~\ref{fig15} ). A similar value for the upwards slope is computed. The
       downwards slope is slightly faster than before, which might be cause by
-      lower outside temperature. We see here that some time after the
+      lower outside temperature. Some time after the
       temperature reaches the lower value again it starts to oscillate heavier.
-      This is also visible for the Door temperature, which we can also fit
+      This is also visible for the Door temperature, which is also fitted
       (Figure~\ref{fig16} ). \\
-      Here we get
+      The time constants are
       $$\tau_{\text{up}} = (32.5 \pm 2.0)\,\text{min}, \;\;\; \tau_{\text{down}} =
       (25.4 \pm 1.5) \,\text{min}$$
       for the PID sensor and
@@ -349,24 +364,30 @@
         \hspace{-20pt}
         \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(14)}}
         \subfigure[]{\hspace{3cm}\includegraphics[width = 0.65\textwidth]{./plots/plot_image(15)}}
-        \caption{Response to change in intemperature reference}
+        \caption{Response to change in intemperature reference. The response
+        again looks much faster at the PID sensor and the door sensor than at
+        the window temperature sensor.}
         \label{fig14}
       \end{figure}
-      \begin{figure}[h!]
+      \begin{figure}[H]
         \centering
-        \includegraphics[width = \textwidth]{./plots/plot_image(16)}
-        \caption{Step response of PID on PID temp. sensor}
+        \includegraphics[width = 0.8\textwidth]{./plots/plot_image(16)}
+        \caption{Step response of PID on PID temperature sensor. The response still
+        fits a exponential rise and falloff. After some time the temperature
+        starts oscillating more.}
         \label{fig15}
       \end{figure}
-      \begin{figure}[h!]
+      \begin{figure}[H]
         \centering
-        \includegraphics[width = \textwidth]{./plots/plot_image(17)}
-        \caption{Step response on Top\_Door temperature sensor}
+        \includegraphics[width = 0.8\textwidth]{./plots/plot_image(17)}
+        \caption{Step response on Top\_Door temperature sensor. The response looks
+        mostly like the one on the PID temperature sensor. The oscillations also
+        occur.}
         \label{fig16}
       \end{figure}
       \clearpage
       \subsubsection{Turning the lights on}
-      At 11 o'clock I turn the lights on in the control room. The reaction at
+      At 11 o'clock the lights are turned on in the control room. The reaction at
       the different sensors is shown below (Figure~\ref{fig17} ), also the set
       values of the heater/cooler are shown (Figure~\ref{fig18} ).
       \begin{figure}[h!]
@@ -375,7 +396,9 @@
         \hspace{-20pt}
         \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(19)}}
         \subfigure[]{\hspace{3cm}\includegraphics[width = 0.65\textwidth]{./plots/plot_image(20)}}
-        \caption{Temperature response to light being turned on}
+        \caption{Temperature response to light being turned on. Both PID and door
+        temperature sensor show heavier oscillations, while the temperature at the
+        window seems to rise.}
         \label{fig17}
       \end{figure} \\
       \begin{figure}[h!]
@@ -383,7 +406,8 @@
         \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(21)}}
         \hspace{-20pt}
         \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(22)}}
-        \caption{Heater/cooler set values after turning on the lights}
+        \caption{Heater/cooler set values after turning on the lights. Heater value
+        does not change much, cooler set value increases.}
         \label{fig18}
       \end{figure}\\
       \noindent Figure~\ref{fig17} shows that the temperature does oscillate more after
@@ -392,13 +416,13 @@
       cooler starts cooling more after turning the lights on.
       \newpage
       \subsubsection{Temperature stabilization over several days}
-      Over the weekend of the 24th to 27th I could make a measurement over two
+      Over the weekend of the 24th to 27th a measurement is made over two
       and a half days. The measurement starts on the 24th at around 16:30 and
-      ends at the 27th at around 4:30. Here I can also do a histogram for the
-      door and window temperatures, as there is no big jump in them (unlike
+      ends at the 27th at around 4:30. Here also histograms for the
+      door and window temperatures are plotted, as there is no big jump in them (unlike
       Figure~\ref{fig11}).\\
-      From the histograms (Figure~\ref{fig19} (d-f) ) we get the mean and
-      standard deviations for the different sensors:
+      Below are the mean and standard deviations for the different sensors, which
+      were also used to plot the gauss curves (Figure~\ref{fig19} (d-f) ):
       \\
       \begin{table}[H]
         \begin{tabular}{l | r | r | r}
@@ -408,7 +432,7 @@
           $\sigma[\text{K}]$ & $0.075$ & $0.073$ & $0.267$
         \end{tabular}
       \end{table}
-      We see that the temperature is fairly stable near the door and the PID
+      The temperature is fairly stable near the door and the PID
       temperature sensor, with
       not even half a degree deviations. The temperature near the window varies
       more, with a standard deviation of $\sigma = 0.267\,\text{K}$.\\
@@ -510,11 +534,26 @@
     drawback does actually influence the results of the experiment (or whether the temperature control is at all
     necessary) remains to be seen.
 
+  \newpage
   \section{Appendix}
-    \begin{figure}[h!]
+    \begin{figure}[H]
       \centering
       \includegraphics[width = \textwidth]{schaltplanvan.png}
-      \caption{Circuit board schematics from Vanessa Scheller}
+      \caption{Circuit board schematics from Vanessa Scheller found in her
+      \href{https://www.mpi-hd.mpg.de/THeWiki/index.php/Temperature_stabilization}{lab book}.
+      The resistance values are not the ones finally used. These are found
+      \hyperref[hcres]{here} and \hyperref[tempres]{here}.}
       \label{fig20}
     \end{figure}
+    \subsection{Miscellaneous}
+      \begin{itemize}
+        \item The client script, controller script and the Arduino program are located in
+              the tritium drive in the folder Stefan.
+        \item In the file howto.txt in the tritium drive (same folder) a small explanation
+              on how to start the control system can be found.
+        \item The current IP-Adress of the Arduino is 149.217.90.48
+        \item Most of the materials for the temperature stabilization
+              are also found on the THee-Wiki: \\
+              \url{https://www.mpi-hd.mpg.de/THeWiki/index.php/Temperature_stabilization}
+      \end{itemize}
 \end{document}
