@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.6.24)  14 MAR 2017 10:30
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.6.24)  14 MAR 2017 13:50
  restricted \write18 enabled.
  file:line:error style messages enabled.
 **protokoll.tex
@@ -326,7 +326,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.043 seconds)
+luaotfload | main : initialization completed in 0.047 seconds)
 Lua module: fontspec 2016/02/01 2.5a Advanced font selection for LuaLaTeX. (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
 Package: fontspec-luatex 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTeX
 \l_fontspec_script_int=\count132
@@ -1216,7 +1216,7 @@ Here is how much of LuaTeX's memory you used:
  57 fonts using 5533287 bytes
  63i,12n,62p,411b,366s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf/fonts/opentype/public/lm/lmmono12-regular.otf></home/stefan/.local/share/fonts/FiraSans-Italic.ttf></home/stefan/.local/share/fonts/FiraSans-BoldItalic.ttf></home/stefan/.local/share/fonts/FiraSans-Bold.ttf></home/stefan/.local/share/fonts/FiraSans-Regular.ttf></usr/share/texmf/fonts/opentype/public/lm/lmsans10-bold.otf><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on protokoll.pdf (20 pages, 8408229 bytes).
+Output written on protokoll.pdf (20 pages, 8408248 bytes).
 
 PDF statistics: 904 PDF objects out of 1000 (max. 8388607)
  656 compressed objects within 7 object streams

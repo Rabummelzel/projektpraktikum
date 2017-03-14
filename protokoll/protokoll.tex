@@ -35,8 +35,8 @@
 
   \section{Experimental setup}
     A temperature sensor, a heater and a cooler are to be connected to a Arduino
-    board. In order for it to work we need to have shifters for the voltage
-    range to fit the inputs/outputs on the Arduino. This was first done by
+    board. In order for it to work shifters for the voltages are needed such that the
+    ranges fit the inputs/outputs on the Arduino. This was first done by
     Vanessa Scheller using cables and a breadboard, her design was reworked
     using a milled circuit board and SMD-parts.
 
@@ -49,7 +49,7 @@
         voltages do not change anymore.}
         \label{fig1}
       \end{figure}
-      \\The input range from the temperature sensor we are interested in is
+      \\The input range from the temperature sensor that is relevant is:
       $$-1.6 \, \text{V} < \text{U}_{\text{in}} < 1.6\, \text{V}$$
       The supply voltage of the op-amps is 15~V. A cutoff after
       the first OpAmp at the input range boundaries is needed such that the
@@ -158,7 +158,7 @@
       \subsection{Measurements for the heater/cooler shifter circuit}
         First the output voltage from the heater and cooler shifter is measured while
         changing the input through the Arduino DAC outputs. The DAC outputs use
-        8Bit resolution, so we measure from 0 to 255 Bits.
+        8Bit resolution, so a measurement is done from 0 to 255 Bits.
         \begin{figure}[h]
           \subfigure[]{\includegraphics[width = 0.55\textwidth]{./plots/plot_image(1)}}
           \subfigure[]{\includegraphics[width = 0.55\textwidth]{./plots/plot_image(2)}}
@@ -416,7 +416,7 @@
       \end{figure}\\
       \noindent Figure~\ref{fig17} shows that the temperature does oscillate more after
       turning the lights on, especially more to the higher temperatures.
-      Below we see that while the heater set value nearly stays the same the
+      Below can be sees that while the heater set value nearly stays the same the
       cooler starts cooling more after turning the lights on.
       \newpage
       \subsubsection{Temperature stabilization over several days}
@@ -447,7 +447,7 @@
       and the opposite is the case for the window temperature. This can also be
       seen by calculating the weighted difference of points to the right to
       points to the left of the mean. If that number is positive it means that
-      we have more points to the left.
+      more points are to the left.
       Calculation yields the following values: \vspace{-5pt}
       \begin{table}[H]
         \begin{tabular}{c | c | c}
