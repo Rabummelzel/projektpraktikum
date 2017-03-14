@@ -182,9 +182,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
-INPUT /home/stefan/projektpraktikum/protokoll/circ.png
-INPUT /home/stefan/projektpraktikum/protokoll/circ.png
-INPUT circ.png
+INPUT /home/stefan/projektpraktikum/protokoll/protokoll.toc
+INPUT /home/stefan/projektpraktikum/protokoll/protokoll.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
@@ -193,6 +192,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+OUTPUT /home/stefan/projektpraktikum/protokoll/protokoll.toc
+INPUT /home/stefan/projektpraktikum/protokoll/circ.png
+INPUT /home/stefan/projektpraktikum/protokoll/circ.png
+INPUT circ.png
 INPUT /home/stefan/projektpraktikum/protokoll/./plots/plot_image.pdf
 INPUT /home/stefan/projektpraktikum/protokoll/./plots/plot_image.pdf
 INPUT ./plots/plot_image.pdf

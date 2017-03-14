@@ -1,0 +1,19 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}Experimental setup}{1}{section.2}
+\contentsline {subsection}{\numberline {2.1}Temperature sensor circuit}{1}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Heater, cooler circuit}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Realization of the circuitboard}{3}{subsection.2.3}
+\contentsline {section}{\numberline {3}Measurements}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Measurements for the heater/cooler shifter circuit}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Measurements of temperature sensor circuit}{7}{subsection.3.2}
+\contentsline {section}{\numberline {4}The temperature control system}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Controlling the PID}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Testing the temperature control system}{9}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Holding the temperature constant}{9}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Change in temperature reference}{11}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Turning the lights on}{15}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Temperature stabilization over several days}{16}{subsubsection.4.2.4}
+\contentsline {section}{\numberline {5}Overview and discussion}{18}{section.5}
+\contentsline {section}{\numberline {6}Appendix}{20}{section.6}
+\contentsline {subsection}{\numberline {6.1}Miscellaneous}{20}{subsection.6.1}
