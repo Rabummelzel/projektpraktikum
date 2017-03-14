@@ -57,7 +57,7 @@
       achieved with
       setting the amplification factor with $\text{R}_1$ and $\text{R}_2$. The output range
       should equal the input range of the Arduino analogue input which goes from
-      0-3.3V. The values found for the resistances are as follows (the added value
+      0-3.3~V. The values found for the resistances are as follows (the added value
       corresponds to a potentiometer in series): \\
       \begin{table}[H]\label{tempres}
         \begin{tabular}{l|c c c c c c}
@@ -287,8 +287,8 @@
           at around 12 o'clock.}
           \label{fig11}
         \end{figure} \\
-        The mean of the histogram is at $\mu = 23.515\,\text{°C}$ and the standard
-        deviation at $\sigma = 0.057\,\text{K}$. \\
+        The mean of the histogram is at $\mu = 23.515~\text{°C}$ and the standard
+        deviation at $\sigma = 0.057~\text{K}$. \\
         The sensor the PID uses to regulate has a good
         nearly constant temperature. The fall/rise of the temperature near
         the door and window can be described as follows. Looking
@@ -304,7 +304,7 @@
       To see how the system reacts to rapid changes in temperature it is much
       easier to look at a change in the reference temperature. For this the value
       of the reference temperature is changed from 450 Bits ($\sim 23.5
-      \,\text{°C}$) to 500 Bits ($\sim 24.8 \,\text{°C}$). \\
+      ~\text{°C}$) to 500 Bits ($\sim 24.8~\text{°C}$). \\
       \begin{figure}[H]
         \hspace{-40pt}
         \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(9)}}
@@ -439,7 +439,7 @@
       The temperature is fairly stable near the door and the PID
       temperature sensor, with
       not even half a degree deviations. The temperature near the window varies
-      more, with a standard deviation of $\sigma = 0.267\,\text{K}$.\\
+      more, with a standard deviation of $\sigma = 0.267~\text{K}$.\\
       Its also visible that the PID sensor seems to show more oscillation on
       daytime and at the window there is a clear rise in temperature over the day.
       \\What can also be seen is that the door temperature seems to be rather
@@ -510,9 +510,9 @@
     influences that would change the temperature, such as change in daytime
     temperature. I used three different sensor which were placed at different
     spots in the control room. The temperature near the door showed a very
-    good constant temperature behavior ($\sigma = 0.073\,\text{K}$), the
+    good constant temperature behavior ($\sigma = 0.073~\text{K}$), the
     temperature near the window does oscillate a little bit more with
-    $\sigma = 0.267\,\text{K}$ (Figure~\ref{fig19}). \\
+    $\sigma = 0.267~\text{K}$ (Figure~\ref{fig19}). \\
     With changing the temperature reference I could examine the behavior for a
     rapid change in temperature. With this one can get a good estimate for the
     time it takes for the system to regulate back to the reference temperature.
