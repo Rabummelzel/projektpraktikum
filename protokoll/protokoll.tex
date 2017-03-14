@@ -75,6 +75,7 @@
           & $15 + 5$
         \end{tabular}
         \caption{Resistances for temp. shifter circuit}
+        \label{tempres}
       \end{table}
       This gives to following response to the input Voltage $\text{U}_{\text{in}}$\\
       \begin{figure}[H]
@@ -101,13 +102,14 @@
       such that the maximum output from the DAC corresponds to the maximum input from
       the heater/cooler. The amplification is set with the resistance $\text{R}_\text{G}$.
       The values found by Vanessa are: \\
-      \begin{table}[H] \label{hcres}
+      \begin{table}[H]
         \begin{tabular}{l|c c c}
           & $\text{R}_\text{a}$ & $\text{R}_\text{b}$ & $\text{R}_\text{G}$ \\
           \hline\vspace{5pt}
           $\text{R}[\text{k}\Omega]$ & $3.92 + 5$ & $1$ & $27+10$
         \end{tabular}
         \flushleft \caption{Resistances for heater/cooler shifter circuit}
+         \label{hcres}
       \end{table}
       \noindent The output here can be described by the amplified difference of the two
       input voltages. The amplification factor was adjusted such that it gives
@@ -552,8 +554,8 @@
       \includegraphics[width = \textwidth]{schaltplanvan.png}
       \caption{Circuit board schematics from Vanessa Scheller found in her
       \href{https://www.mpi-hd.mpg.de/THeWiki/index.php/Temperature_stabilization}{lab book}.
-      The resistance values are not the ones finally used. These are found
-      \hyperref[hcres]{here} and \hyperref[tempres]{here}.}
+      The resistance values are not the ones finally used. These are found in
+      Table~\ref{tempres} and Table~\ref{hcres}.}
       \label{fig20}
     \end{figure}
     \subsection{Miscellaneous}
