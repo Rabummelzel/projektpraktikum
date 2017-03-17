@@ -1,8 +1,8 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.6.24)  14 MAR 2017 19:19
- restricted \write18 enabled.
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015/Debian) (rev 5238)  (format=lualatex 2016.6.25)  17 MAR 2017 16:39
+ \write18 enabled.
  file:line:error style messages enabled.
 **protokoll.tex
-(/home/stefan/projektpraktikum/protokoll/protokoll.tex
+(/home/stefan/Projektpraktikum/protokoll/protokoll.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -167,11 +167,11 @@ Package: babel 2016/02/24 3.9q The Babel package
  (/usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def
 \l@dumylang=\language1
 \l@nohyphenation=\language2
-\l@ngerman-x-2014-05-21=\language3
-\l@german=\language4
-\l@swissgerman=\language5
+\l@german-x-2014-05-21=\language3
+\l@swissgerman=\language4
+\l@german=\language5
 \l@ngerman=\language6
-\l@german-x-2014-05-21=\language7
+\l@ngerman-x-2014-05-21=\language7
 ) (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2012/08/20 v3.3p English support from the babel system
  (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
@@ -326,7 +326,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.045 seconds)
+luaotfload | main : initialization completed in 0.074 seconds)
 Lua module: fontspec 2016/02/01 2.5a Advanced font selection for LuaLaTeX. (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
 Package: fontspec-luatex 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTeX
 \l_fontspec_script_int=\count132
@@ -697,7 +697,7 @@ luaotfload | load : Lookup/name: "FiraSans" -> "FiraSans-BoldItalic.ttf"
 . <->"FiraSans/BI:mode=node;script=latn;language=DFLT;+tlig;+smcp;"
 .................................................
 luaotfload | load : Lookup/name: "FiraSans" -> "FiraSans-Regular.ttf"
-(/home/stefan/projektpraktikum/protokoll/protokoll.aux
+(/home/stefan/Projektpraktikum/protokoll/protokoll.aux
 
 LaTeX Warning: Label `tempres' multiply defined.
 
@@ -854,7 +854,7 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 17.
 LaTeX Info: Redefining \pageref on input line 17.
 LaTeX Info: Redefining \nameref on input line 17.
- (/home/stefan/projektpraktikum/protokoll/protokoll.out) (/home/stefan/projektpraktikum/protokoll/protokoll.out)
+ (/home/stefan/Projektpraktikum/protokoll/protokoll.out) (/home/stefan/Projektpraktikum/protokoll/protokoll.out)
 \@outlinefile=\write3
 
 \openout3 = protokoll.out
@@ -887,7 +887,7 @@ luaotfload | load : Lookup/name: "FiraSans" -> "FiraSans-Regular.ttf"
 luaotfload | load : Lookup/name: "FiraSans" -> "FiraSans-Regular.ttf" [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/home/stefan/projektpraktikum/protokoll/protokoll.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/home/stefan/Projektpraktikum/protokoll/protokoll.toc
 luaotfload | load : Lookup/name: "FiraSans" -> "FiraSans-Regular.ttf"
 luaotfload | load : Lookup/name: "FiraSans" -> "FiraSans-Regular.ttf")
 \tf@toc=\write4
@@ -911,7 +911,7 @@ LuaTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 l.80       T
           his gives to following response to the input Voltage $\text{U}_{\t... [1
 
-</home/stefan/projektpraktikum/protokoll/circ.png>] <./plots/plot_image.pdf, id=116, 642.4pt x 481.8pt>
+</home/stefan/Projektpraktikum/protokoll/circ.png>] <./plots/plot_image.pdf, id=116, 642.4pt x 481.8pt>
 File: ./plots/plot_image.pdf Graphic file (type pdf)
  <use ./plots/plot_image.pdf>
 Package pdftex.def Info: ./plots/plot_image.pdf used on input line 82.
@@ -940,204 +940,204 @@ File: board.png Graphic file (type png)
  <use board.png>
 Package pdftex.def Info: board.png used on input line 143.
 (pdftex.def)             Requested size: 426.79135pt x 226.89514pt.
- [3</home/stefan/projektpraktikum/protokoll/circ2.png>] <boardbild.jpg, id=156, 3330.4425pt x 1820.8025pt>
+ [3</home/stefan/Projektpraktikum/protokoll/circ2.png>] <boardbild.jpg, id=156, 3330.4425pt x 1820.8025pt>
 File: boardbild.jpg Graphic file (type jpg)
  <use boardbild.jpg>
 Package pdftex.def Info: boardbild.jpg used on input line 149.
 (pdftex.def)             Requested size: 426.79135pt x 233.32309pt.
- <boardwitharduino.jpg, id=157, 3063.445pt x 2688.0425pt>
+ <boardwitharduino.jpg, id=158, 3063.445pt x 2688.0425pt>
 File: boardwitharduino.jpg Graphic file (type jpg)
  <use boardwitharduino.jpg>
-Package pdftex.def Info: boardwitharduino.jpg used on input line 154.
+Package pdftex.def Info: boardwitharduino.jpg used on input line 155.
 (pdftex.def)             Requested size: 426.79135pt x 374.47766pt.
- <imschrank.jpg, id=158, 3131.7pt x 4175.6pt>
+ <imschrank.jpg, id=159, 3131.7pt x 4175.6pt>
 File: imschrank.jpg Graphic file (type jpg)
  <use imschrank.jpg>
-Package pdftex.def Info: imschrank.jpg used on input line 160.
+Package pdftex.def Info: imschrank.jpg used on input line 161.
 (pdftex.def)             Requested size: 426.79135pt x 569.0337pt.
- [4</home/stefan/projektpraktikum/protokoll/board.png></home/stefan/projektpraktikum/protokoll/boardbild.jpg>] [5</home/stefan/projektpraktikum/protokoll/boardwitharduino.jpg>] [6</home/stefan/projektpraktikum/protokoll/imschrank.jpg>] <./plots/plot_image(1).pdf, id=177, 642.4pt x 481.8pt>
+ [4</home/stefan/Projektpraktikum/protokoll/board.png></home/stefan/Projektpraktikum/protokoll/boardbild.jpg>] [5</home/stefan/Projektpraktikum/protokoll/boardwitharduino.jpg>] [6</home/stefan/Projektpraktikum/protokoll/imschrank.jpg>] <./plots/plot_image(1).pdf, id=178, 642.4pt x 481.8pt>
 File: ./plots/plot_image(1).pdf Graphic file (type pdf)
  <use ./plots/plot_image(1).pdf>
-Package pdftex.def Info: ./plots/plot_image(1).pdf used on input line 172.
+Package pdftex.def Info: ./plots/plot_image(1).pdf used on input line 173.
 (pdftex.def)             Requested size: 234.73654pt x 176.05035pt.
- <./plots/plot_image(2).pdf, id=178, 642.4pt x 481.8pt>
+ <./plots/plot_image(2).pdf, id=179, 642.4pt x 481.8pt>
 File: ./plots/plot_image(2).pdf Graphic file (type pdf)
  <use ./plots/plot_image(2).pdf>
-Package pdftex.def Info: ./plots/plot_image(2).pdf used on input line 173.
+Package pdftex.def Info: ./plots/plot_image(2).pdf used on input line 174.
 (pdftex.def)             Requested size: 234.73654pt x 176.05035pt.
 
-Overfull \hbox (44.80173pt too wide) in paragraph at lines 172--176
+Overfull \hbox (44.80173pt too wide) in paragraph at lines 173--177
 [][][] [][] 
  []
 
-<./plots/plot_image(3).pdf, id=179, 642.4pt x 481.8pt>
+<./plots/plot_image(3).pdf, id=180, 642.4pt x 481.8pt>
 File: ./plots/plot_image(3).pdf Graphic file (type pdf)
  <use ./plots/plot_image(3).pdf>
-Package pdftex.def Info: ./plots/plot_image(3).pdf used on input line 186.
+Package pdftex.def Info: ./plots/plot_image(3).pdf used on input line 187.
 (pdftex.def)             Requested size: 234.73654pt x 176.05035pt.
 luaotfload | load : Lookup/name: "FiraSans" -> "FiraSans-Bold.ttf"
 luaotfload | load : Lookup/name: "FiraSans" -> "FiraSans-BoldItalic.ttf"
-Underfull \hbox (badness 10000) in paragraph at lines 194--227
+Underfull \hbox (badness 10000) in paragraph at lines 195--228
 
  []
 
 [7<./plots/plot_image(1).pdf><./plots/plot_image(2).pdf><./plots/plot_image(3).pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 238--243
+Underfull \hbox (badness 10000) in paragraph at lines 239--244
 
  []
 
 luaotfload | load : Lookup/name: "FiraSans" -> "FiraSans-Italic.ttf"
-Underfull \hbox (badness 10000) in paragraph at lines 244--253
+Underfull \hbox (badness 10000) in paragraph at lines 245--254
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 254--257
+Underfull \hbox (badness 10000) in paragraph at lines 255--258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--262
+Underfull \hbox (badness 10000) in paragraph at lines 259--263
 
  []
 
-<./plots/plot_image(4).pdf, id=269, 642.4pt x 481.8pt>
+<./plots/plot_image(4).pdf, id=270, 642.4pt x 481.8pt>
 File: ./plots/plot_image(4).pdf Graphic file (type pdf)
  <use ./plots/plot_image(4).pdf>
-Package pdftex.def Info: ./plots/plot_image(4).pdf used on input line 267.
+Package pdftex.def Info: ./plots/plot_image(4).pdf used on input line 268.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--274
+Underfull \hbox (badness 10000) in paragraph at lines 264--275
 
  []
 
-<./plots/plot_image(5).pdf, id=272, 642.4pt x 481.8pt>
+<./plots/plot_image(5).pdf, id=273, 642.4pt x 481.8pt>
 File: ./plots/plot_image(5).pdf Graphic file (type pdf)
  <use ./plots/plot_image(5).pdf>
-Package pdftex.def Info: ./plots/plot_image(5).pdf used on input line 288.
+Package pdftex.def Info: ./plots/plot_image(5).pdf used on input line 289.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(6).pdf, id=273, 642.4pt x 481.8pt>
+ <./plots/plot_image(6).pdf, id=274, 642.4pt x 481.8pt>
 File: ./plots/plot_image(6).pdf Graphic file (type pdf)
  <use ./plots/plot_image(6).pdf>
-Package pdftex.def Info: ./plots/plot_image(6).pdf used on input line 290.
+Package pdftex.def Info: ./plots/plot_image(6).pdf used on input line 291.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(7).pdf, id=274, 642.4pt x 481.8pt>
+ <./plots/plot_image(7).pdf, id=275, 642.4pt x 481.8pt>
 File: ./plots/plot_image(7).pdf Graphic file (type pdf)
  <use ./plots/plot_image(7).pdf>
-Package pdftex.def Info: ./plots/plot_image(7).pdf used on input line 291.
+Package pdftex.def Info: ./plots/plot_image(7).pdf used on input line 292.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(8).pdf, id=275, 642.4pt x 481.8pt>
+ <./plots/plot_image(8).pdf, id=276, 642.4pt x 481.8pt>
 File: ./plots/plot_image(8).pdf Graphic file (type pdf)
  <use ./plots/plot_image(8).pdf>
-Package pdftex.def Info: ./plots/plot_image(8).pdf used on input line 292.
+Package pdftex.def Info: ./plots/plot_image(8).pdf used on input line 293.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
 
-Overfull \hbox (74.39215pt too wide) in paragraph at lines 287--296
+Overfull \hbox (74.39215pt too wide) in paragraph at lines 288--297
 [][]  [][]   [][]
  []
 
 
-Overfull \hbox (70.15216pt too wide) in paragraph at lines 287--296
+Overfull \hbox (70.15216pt too wide) in paragraph at lines 288--297
 [][] [][] 
  []
 
-[9<./plots/plot_image(4).pdf>] [10<./plots/plot_image(5).pdf><./plots/plot_image(6).pdf><./plots/plot_image(7).pdf><./plots/plot_image(8).pdf>] <./plots/plot_image(9).pdf, id=382, 642.4pt x 481.8pt>
+[9<./plots/plot_image(4).pdf>] [10<./plots/plot_image(5).pdf><./plots/plot_image(6).pdf><./plots/plot_image(7).pdf><./plots/plot_image(8).pdf>] <./plots/plot_image(9).pdf, id=383, 642.4pt x 481.8pt>
 File: ./plots/plot_image(9).pdf Graphic file (type pdf)
  <use ./plots/plot_image(9).pdf>
-Package pdftex.def Info: ./plots/plot_image(9).pdf used on input line 319.
+Package pdftex.def Info: ./plots/plot_image(9).pdf used on input line 320.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(10).pdf, id=383, 642.4pt x 481.8pt>
+ <./plots/plot_image(10).pdf, id=384, 642.4pt x 481.8pt>
 File: ./plots/plot_image(10).pdf Graphic file (type pdf)
  <use ./plots/plot_image(10).pdf>
-Package pdftex.def Info: ./plots/plot_image(10).pdf used on input line 321.
+Package pdftex.def Info: ./plots/plot_image(10).pdf used on input line 322.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(11).pdf, id=384, 642.4pt x 481.8pt>
+ <./plots/plot_image(11).pdf, id=385, 642.4pt x 481.8pt>
 File: ./plots/plot_image(11).pdf Graphic file (type pdf)
  <use ./plots/plot_image(11).pdf>
-Package pdftex.def Info: ./plots/plot_image(11).pdf used on input line 322.
+Package pdftex.def Info: ./plots/plot_image(11).pdf used on input line 323.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
 
-Overfull \hbox (74.39215pt too wide) in paragraph at lines 318--325
+Overfull \hbox (74.39215pt too wide) in paragraph at lines 319--326
 [][]  [][]   [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--327
+Underfull \hbox (badness 10000) in paragraph at lines 314--328
 
  []
 
-[11<./plots/plot_image(9).pdf><./plots/plot_image(10).pdf><./plots/plot_image(11).pdf>] <./plots/plot_image(12).pdf, id=445, 642.4pt x 481.8pt>
+[11<./plots/plot_image(9).pdf><./plots/plot_image(10).pdf><./plots/plot_image(11).pdf>] <./plots/plot_image(12).pdf, id=446, 642.4pt x 481.8pt>
 File: ./plots/plot_image(12).pdf Graphic file (type pdf)
  <use ./plots/plot_image(12).pdf>
-Package pdftex.def Info: ./plots/plot_image(12).pdf used on input line 346.
+Package pdftex.def Info: ./plots/plot_image(12).pdf used on input line 347.
 (pdftex.def)             Requested size: 426.79135pt x 320.0989pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--368
+Underfull \hbox (badness 10000) in paragraph at lines 356--369
 
  []
 
-[12<./plots/plot_image(12).pdf>] <./plots/plot_image(13).pdf, id=478, 642.4pt x 481.8pt>
+[12<./plots/plot_image(12).pdf>] <./plots/plot_image(13).pdf, id=479, 642.4pt x 481.8pt>
 File: ./plots/plot_image(13).pdf Graphic file (type pdf)
  <use ./plots/plot_image(13).pdf>
-Package pdftex.def Info: ./plots/plot_image(13).pdf used on input line 376.
+Package pdftex.def Info: ./plots/plot_image(13).pdf used on input line 377.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(14).pdf, id=479, 642.4pt x 481.8pt>
+ <./plots/plot_image(14).pdf, id=480, 642.4pt x 481.8pt>
 File: ./plots/plot_image(14).pdf Graphic file (type pdf)
  <use ./plots/plot_image(14).pdf>
-Package pdftex.def Info: ./plots/plot_image(14).pdf used on input line 378.
+Package pdftex.def Info: ./plots/plot_image(14).pdf used on input line 379.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(15).pdf, id=480, 642.4pt x 481.8pt>
+ <./plots/plot_image(15).pdf, id=481, 642.4pt x 481.8pt>
 File: ./plots/plot_image(15).pdf Graphic file (type pdf)
  <use ./plots/plot_image(15).pdf>
-Package pdftex.def Info: ./plots/plot_image(15).pdf used on input line 379.
+Package pdftex.def Info: ./plots/plot_image(15).pdf used on input line 380.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
 
-Overfull \hbox (74.39215pt too wide) in paragraph at lines 375--382
+Overfull \hbox (74.39215pt too wide) in paragraph at lines 376--383
 [][]  [][]   [][]
  []
 
-<./plots/plot_image(16).pdf, id=481, 642.4pt x 481.8pt>
+<./plots/plot_image(16).pdf, id=482, 642.4pt x 481.8pt>
 File: ./plots/plot_image(16).pdf Graphic file (type pdf)
  <use ./plots/plot_image(16).pdf>
-Package pdftex.def Info: ./plots/plot_image(16).pdf used on input line 387.
+Package pdftex.def Info: ./plots/plot_image(16).pdf used on input line 388.
 (pdftex.def)             Requested size: 341.43437pt x 256.0806pt.
- <./plots/plot_image(17).pdf, id=482, 642.4pt x 481.8pt>
+ <./plots/plot_image(17).pdf, id=483, 642.4pt x 481.8pt>
 File: ./plots/plot_image(17).pdf Graphic file (type pdf)
  <use ./plots/plot_image(17).pdf>
-Package pdftex.def Info: ./plots/plot_image(17).pdf used on input line 395.
+Package pdftex.def Info: ./plots/plot_image(17).pdf used on input line 396.
 (pdftex.def)             Requested size: 341.43437pt x 256.0806pt.
- [13<./plots/plot_image(13).pdf><./plots/plot_image(14).pdf><./plots/plot_image(15).pdf>] [14<./plots/plot_image(16).pdf><./plots/plot_image(17).pdf>] <./plots/plot_image(18).pdf, id=590, 642.4pt x 481.8pt>
+ [13<./plots/plot_image(13).pdf><./plots/plot_image(14).pdf><./plots/plot_image(15).pdf>] [14<./plots/plot_image(16).pdf><./plots/plot_image(17).pdf>] <./plots/plot_image(18).pdf, id=591, 642.4pt x 481.8pt>
 File: ./plots/plot_image(18).pdf Graphic file (type pdf)
  <use ./plots/plot_image(18).pdf>
-Package pdftex.def Info: ./plots/plot_image(18).pdf used on input line 408.
+Package pdftex.def Info: ./plots/plot_image(18).pdf used on input line 409.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(19).pdf, id=591, 642.4pt x 481.8pt>
+ <./plots/plot_image(19).pdf, id=592, 642.4pt x 481.8pt>
 File: ./plots/plot_image(19).pdf Graphic file (type pdf)
  <use ./plots/plot_image(19).pdf>
-Package pdftex.def Info: ./plots/plot_image(19).pdf used on input line 410.
+Package pdftex.def Info: ./plots/plot_image(19).pdf used on input line 411.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(20).pdf, id=592, 642.4pt x 481.8pt>
+ <./plots/plot_image(20).pdf, id=593, 642.4pt x 481.8pt>
 File: ./plots/plot_image(20).pdf Graphic file (type pdf)
  <use ./plots/plot_image(20).pdf>
-Package pdftex.def Info: ./plots/plot_image(20).pdf used on input line 411.
+Package pdftex.def Info: ./plots/plot_image(20).pdf used on input line 412.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
 
-Overfull \hbox (74.39215pt too wide) in paragraph at lines 407--414
+Overfull \hbox (74.39215pt too wide) in paragraph at lines 408--415
 [][]  [][]   [][]
  []
 
-<./plots/plot_image(21).pdf, id=593, 642.4pt x 481.8pt>
+<./plots/plot_image(21).pdf, id=594, 642.4pt x 481.8pt>
 File: ./plots/plot_image(21).pdf Graphic file (type pdf)
  <use ./plots/plot_image(21).pdf>
-Package pdftex.def Info: ./plots/plot_image(21).pdf used on input line 419.
+Package pdftex.def Info: ./plots/plot_image(21).pdf used on input line 420.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(22).pdf, id=594, 642.4pt x 481.8pt>
+ <./plots/plot_image(22).pdf, id=595, 642.4pt x 481.8pt>
 File: ./plots/plot_image(22).pdf Graphic file (type pdf)
  <use ./plots/plot_image(22).pdf>
-Package pdftex.def Info: ./plots/plot_image(22).pdf used on input line 421.
+Package pdftex.def Info: ./plots/plot_image(22).pdf used on input line 422.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
 
-Overfull \hbox (74.39215pt too wide) in paragraph at lines 418--423
+Overfull \hbox (74.39215pt too wide) in paragraph at lines 419--424
 [][]  [][]   [][] 
  []
 
@@ -1147,84 +1147,84 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [15
 
 <./plots/plot_image(18).pdf><./plots/plot_image(19).pdf><./plots/plot_image(20).pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 432--447
+Underfull \hbox (badness 10000) in paragraph at lines 433--448
 
  []
 
-<./plots/plot_image(23).pdf, id=659, 642.4pt x 481.8pt>
+<./plots/plot_image(23).pdf, id=660, 642.4pt x 481.8pt>
 File: ./plots/plot_image(23).pdf Graphic file (type pdf)
  <use ./plots/plot_image(23).pdf>
-Package pdftex.def Info: ./plots/plot_image(23).pdf used on input line 471.
+Package pdftex.def Info: ./plots/plot_image(23).pdf used on input line 472.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(24).pdf, id=660, 642.4pt x 481.8pt>
+ <./plots/plot_image(24).pdf, id=661, 642.4pt x 481.8pt>
 File: ./plots/plot_image(24).pdf Graphic file (type pdf)
  <use ./plots/plot_image(24).pdf>
-Package pdftex.def Info: ./plots/plot_image(24).pdf used on input line 473.
+Package pdftex.def Info: ./plots/plot_image(24).pdf used on input line 474.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(25).pdf, id=661, 642.4pt x 481.8pt>
+ <./plots/plot_image(25).pdf, id=662, 642.4pt x 481.8pt>
 File: ./plots/plot_image(25).pdf Graphic file (type pdf)
  <use ./plots/plot_image(25).pdf>
-Package pdftex.def Info: ./plots/plot_image(25).pdf used on input line 474.
+Package pdftex.def Info: ./plots/plot_image(25).pdf used on input line 475.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(26).pdf, id=662, 642.4pt x 481.8pt>
+ <./plots/plot_image(26).pdf, id=663, 642.4pt x 481.8pt>
 File: ./plots/plot_image(26).pdf Graphic file (type pdf)
  <use ./plots/plot_image(26).pdf>
-Package pdftex.def Info: ./plots/plot_image(26).pdf used on input line 475.
+Package pdftex.def Info: ./plots/plot_image(26).pdf used on input line 476.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(27).pdf, id=663, 642.4pt x 481.8pt>
+ <./plots/plot_image(27).pdf, id=664, 642.4pt x 481.8pt>
 File: ./plots/plot_image(27).pdf Graphic file (type pdf)
  <use ./plots/plot_image(27).pdf>
-Package pdftex.def Info: ./plots/plot_image(27).pdf used on input line 476.
+Package pdftex.def Info: ./plots/plot_image(27).pdf used on input line 477.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
- <./plots/plot_image(28).pdf, id=664, 642.4pt x 481.8pt>
+ <./plots/plot_image(28).pdf, id=665, 642.4pt x 481.8pt>
 File: ./plots/plot_image(28).pdf Graphic file (type pdf)
  <use ./plots/plot_image(28).pdf>
-Package pdftex.def Info: ./plots/plot_image(28).pdf used on input line 477.
+Package pdftex.def Info: ./plots/plot_image(28).pdf used on input line 478.
 (pdftex.def)             Requested size: 277.41176pt x 208.05951pt.
 
-Overfull \hbox (54.39215pt too wide) in paragraph at lines 470--479
+Overfull \hbox (54.39215pt too wide) in paragraph at lines 471--480
 [][]  [][]   [][]
  []
 
 
-Overfull \hbox (70.15216pt too wide) in paragraph at lines 470--479
+Overfull \hbox (70.15216pt too wide) in paragraph at lines 471--480
 [][] [][]
  []
 
 
-Overfull \hbox (70.15216pt too wide) in paragraph at lines 470--479
+Overfull \hbox (70.15216pt too wide) in paragraph at lines 471--480
 [][] [][] 
  []
 
 [16<./plots/plot_image(21).pdf><./plots/plot_image(22).pdf>]
 Overfull \vbox (11.79266pt too high) has occurred while \output is active []
 
- [17<./plots/plot_image(23).pdf><./plots/plot_image(24).pdf><./plots/plot_image(25).pdf><./plots/plot_image(26).pdf><./plots/plot_image(27).pdf><./plots/plot_image(28).pdf>] [18] [19] <schaltplanvan.png, id=855, 496.85625pt x 452.4403pt>
+ [17<./plots/plot_image(23).pdf><./plots/plot_image(24).pdf><./plots/plot_image(25).pdf><./plots/plot_image(26).pdf><./plots/plot_image(27).pdf><./plots/plot_image(28).pdf>] [18] [19] <schaltplanvan.png, id=856, 496.85625pt x 452.4403pt>
 File: schaltplanvan.png Graphic file (type png)
  <use schaltplanvan.png>
-Package pdftex.def Info: schaltplanvan.png used on input line 554.
+Package pdftex.def Info: schaltplanvan.png used on input line 555.
 (pdftex.def)             Requested size: 426.79135pt x 388.64235pt.
-LaTeX Font Info:    Try loading font information for EU2+lmtt on input line 570.
+LaTeX Font Info:    Try loading font information for EU2+lmtt on input line 571.
  (/usr/share/texlive/texmf-dist/tex/latex/euenc/eu2lmtt.fd
 File: eu2lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )(compiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmmono12-regular.luc)(load luc: /home/stefan/.texmf-var/luatex-cache/generic/fonts/otf/lmmono12-regular.luc)
-Overfull \hbox (29.50284pt too wide) in paragraph at lines 568--571
+Overfull \hbox (29.50284pt too wide) in paragraph at lines 569--572
 []$\EU2/lmtt/m/n/12 https : / / www . mpi-[]hd . mpg . de / THeWiki / index . php / Temperature _ stabilization$[] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 572.
-[20</home/stefan/projektpraktikum/protokoll/schaltplanvan.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 572.
- (/home/stefan/projektpraktikum/protokoll/protokoll.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 572.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 572.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 573.
+[20</home/stefan/Projektpraktikum/protokoll/schaltplanvan.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 573.
+ (/home/stefan/Projektpraktikum/protokoll/protokoll.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 573.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 573.
 Package rerunfilecheck Info: File `protokoll.out' has not changed.
 (rerunfilecheck)             Checksum: B497D054012327B61C22761C690C3BF0;1318.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 572.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 573.
 )
 
 Here is how much of LuaTeX's memory you used:
@@ -1232,15 +1232,15 @@ Here is how much of LuaTeX's memory you used:
  100000,552014 words of node,token memory allocated
  483 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 4 attribute, 59 glue_spec, 4 attribute_list, 1 action, 1 write nodes
-   avail lists: 2:527,3:198,4:964,5:622,6:3934,7:212,8:21,9:193,10:349
+   avail lists: 2:527,3:198,4:964,5:622,6:3934,7:212,8:21,9:194,10:349
  25743 multiletter control sequences out of 65536+600000
  57 fonts using 5533287 bytes
  63i,12n,62p,404b,366s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf/fonts/opentype/public/lm/lmmono12-regular.otf></home/stefan/.local/share/fonts/FiraSans-Italic.ttf></home/stefan/.local/share/fonts/FiraSans-BoldItalic.ttf></home/stefan/.local/share/fonts/FiraSans-Bold.ttf></home/stefan/.local/share/fonts/FiraSans-Regular.ttf></usr/share/texmf/fonts/opentype/public/lm/lmsans10-bold.otf><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on protokoll.pdf (22 pages, 8410853 bytes).
+Output written on protokoll.pdf (22 pages, 8410918 bytes).
 
-PDF statistics: 931 PDF objects out of 1000 (max. 8388607)
- 681 compressed objects within 7 object streams
+PDF statistics: 932 PDF objects out of 1000 (max. 8388607)
+ 682 compressed objects within 7 object streams
  94 named destinations out of 1000 (max. 131072)
  145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

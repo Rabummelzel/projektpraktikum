@@ -29,22 +29,22 @@
   \setcounter{page}{1}
 
   \section{Introduction}
-    During the 6 week project work the PID temperature control system in the
-    control room of the THe-Trap experiment was to be developed further. A
-    network communication was established using a Ethernet Shield on
+    In the duration of this project work the task was to develop further the PID
+    temperature control system in the THe-Trap control room.
+    A network communication was established using a Ethernet Shield on
     the Arduino Due platform which acts as the controller. Through this
     interface it is now possible to read out values and change the behaviour
     of the PID controller with a script running on a local machine.\\
     The level shifting circuit board for the in- and outputs on the Arduino
     was reconstructed into a sturdier design using SMD-parts on a milled
     circuit board.\\
-    At last the temperature control was tested using the new network interface.
+    \indent At last the temperature control was tested using the new network interface.
 
   \section{Experimental setup}
     A temperature sensor, a heater and a cooler are to be connected to a Arduino
-    board. In order for it to work shifters for the voltages are needed such that the
+    board. Shifters for the voltages are needed such that the
     ranges fit the inputs/outputs on the Arduino. This was first done by
-    Vanessa Scheller using cables and a breadboard, her design was reworked
+    Vanessa Scheller using cables and a breadboard, her design is reworked
     using a milled circuit board and SMD-parts.
 
     \subsection{Temperature sensor circuit}
@@ -112,7 +112,7 @@
          \label{hcres}
       \end{table}
       \noindent The output here can be described by the amplified difference of the two
-      input voltages. The amplification factor was adjusted such that it gives
+      input voltages. The amplification factor is adjusted such that it gives
       the needed output range.
       To both circuits many capacitances are added, which are for filtering
       the input +15~V/-15~V and the reference voltage from AC voltage parts. This is done with
@@ -130,11 +130,11 @@
       \\ Notice that the header for the left AD622 was placed in the opposite
       direction, such that the marker for the top is actually on the other side
       than the top is supposed to be.\\
-      Also some of the capacitances were not soldered in, on the design of the
-      board they were made as a precaution.\\
+      Also some of the capacitances are not soldered in, on the design of the
+      board they were made as a precaution (between the + and - input of the AD622 and OP07).
       It was found that the heater/cooler cables add a capacitance which lead
       to oscillations on the temperature measurement. Adding $100 \Omega$
-      resistors on the heater/cooler output resolved the issue.\\ In Figure~
+      resistors on the heater/cooler output resolved the issue. In Figure~
       \ref{fig6} the board connected to the Arduino with the Ethernet
       Shield 2 on top is shown. \\
       After everything on the board is done it is put into the housing in the
@@ -142,12 +142,13 @@
       \begin{figure}[H]
         \includegraphics[width = \textwidth]{board.png}
         \caption{The circuit board layout was done using EAGLE Professional.
-        It consists of two planes.}
+        It consists of two planes, a top and a ground plane.}
         \label{fig4}
       \end{figure}
       \begin{figure}[H]
         \includegraphics[width = \textwidth]{boardbild.jpg}
-        \caption{A picture of the circuit board with input / output configuration.}
+        \caption{A picture of the milled circuit board with the design of Figure~\ref{fig4}
+        with input / output configuration.}
         \label{fig5}
       \end{figure}
       \begin{figure}[H]
@@ -165,9 +166,9 @@
     \newpage
     \section{Measurements}
       \subsection{Measurements for the heater/cooler shifter circuit}
-        First the output voltage from the heater and cooler shifter is measured while
+        First the output voltage from the heater and cooler voltage shifter is measured while
         changing the input through the Arduino DAC outputs. The DAC outputs use
-        8Bit resolution, so a measurement is done from 0 to 255 Bits.
+        8Bit resolution, so a measurement is done from 0 to 255.
         \begin{figure}[h]
           \subfigure[]{\includegraphics[width = 0.55\textwidth]{./plots/plot_image(1)}}
           \subfigure[]{\includegraphics[width = 0.55\textwidth]{./plots/plot_image(2)}}
@@ -266,7 +267,7 @@
         \centering
         \includegraphics[width = 0.65\textwidth]{./plots/plot_image(4)}
         \caption{Calibration of temperature sensor done by Vanessa Scheller.
-        The standard value the PID controller regulates to is at 450~Bits,
+        The standard value the PID controller regulates to is at 450,
         corresponding to 23.5~°C.}
         \label{fig10}
       \end{figure}
@@ -312,8 +313,8 @@
       \subsubsection{Change in temperature reference}
       To see how the system reacts to rapid changes in temperature it is much
       easier to look at a change in the reference temperature. For this the value
-      of the reference temperature is changed from 450 Bits ($\sim 23.5
-      ~\text{°C}$) to 500 Bits ($\sim 24.8~\text{°C}$). \\
+      of the reference temperature is changed from 450  ($\sim 23.5
+      ~\text{°C}$) to 500  ($\sim 24.8~\text{°C}$). \\
       \begin{figure}[H]
         \hspace{-40pt}
         \subfigure[]{\includegraphics[width = 0.65\textwidth]{./plots/plot_image(9)}}
@@ -356,7 +357,7 @@
       It is also visible that the temperature does not overshoot and does not
       strongly oscillate. \\\\
       Another measurement is made to confirm the behavior. This one is done at
-      night (Temperature to 500 Bits at 19:11 and back to 450 Bits at 22:45)
+      night (Temperature to 500 at 19:11 and back to 450 at 22:45)
       (see Figure~\ref{fig14} ). \\ The fitting procedure is also repeated
       (Figure~\ref{fig15} ). A similar value for the upwards slope is computed. The
       downwards slope is slightly faster than before, which might be cause by
@@ -429,7 +430,7 @@
       cooler starts cooling more after turning the lights on.
       \newpage
       \subsubsection{Temperature stabilization over several days}
-      Over the weekend of the 24th to 27th a measurement is made over two
+      Over the weekend of the 24th to 27th of february 2017 a measurement is made over two
       and a half days. The measurement starts on the 24th at around 16:30 and
       ends at the 27th at around 4:30. Here also histograms for the
       door and window temperatures are plotted, as there is no big jump in them (unlike
